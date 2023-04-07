@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark w-100" style="background-color: #dfc6f6;">
+  <div class="container d-flex justify-content-between">
+    <a class="navbar-brand" href="#">
+      <div class=" text-dark" ></div>
+      <!-- <img src="assets\img\fenixLogoWithTextInWhite.png" width="200px" height="70px"> -->
+    </a>
+
+    <button class="navbar-toggler btn " type="button" data-bs-toggle="collapse" (click)="isMenuCollapsed = !isMenuCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent" [ngbCollapse]="isMenuCollapsed">
+      <div class="d-flex justify-content-lg-end w-100">
+        <ul class="h5 navbar-nav p-2">
+          <li class="nav-item">
+            <a class="nav-link text-dark " routerLinkActive="is-active"  routerLink="/home" [routerLinkActiveOptions]="{exact:true}">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark " routerLinkActive="is-active"  routerLink="/about">MEN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" routerLinkActive="is-active"  routerLink="/visas">WOMEN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark " routerLinkActive="is-active"  routerLink="/gallery">KIDS</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link text-dark" routerLinkActive="is-active" routerLink="/services">Our Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" routerLinkActive="is-active"  routerLink="/contact">Contact Us</a>
+          </li> -->
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</nav>
