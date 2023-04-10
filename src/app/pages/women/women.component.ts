@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-women',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./women.component.css']
 })
 export class WomenComponent {
+constructor(private carousel: NgbCarouselModule){
 
+}
 }

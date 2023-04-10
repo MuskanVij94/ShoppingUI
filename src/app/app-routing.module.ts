@@ -4,6 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { KidsComponent } from './pages/kids/kids.component';
 import { WomenComponent } from './pages/women/women.component';
 import { MenComponent } from './pages/men/men.component';
+import { LoginComponent } from './pages/login/login.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -11,8 +13,8 @@ const routes: Routes = [
   {path: 'men', component: MenComponent},
   {path: 'women', component: WomenComponent},
   {path: 'kids', component: KidsComponent} ,
-  // {path: 'contact', component: ContactComponent},
-  // {path: 'gallery', component: GalleryComponent}
+  {path: 'cart', component: CartComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

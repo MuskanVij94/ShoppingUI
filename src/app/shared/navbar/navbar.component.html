@@ -15,7 +15,7 @@
             <a class="nav-link text-dark " routerLinkActive="is-active"  routerLink="/home" [routerLinkActiveOptions]="{exact:true}">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark " routerLinkActive="is-active"  routerLink="/men">MEN</a>
+            <a class="nav-link text-dark" routerLinkActive="is-active"  routerLink="/men">MEN</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-dark" routerLinkActive="is-active"  routerLink="/women">WOMEN</a>
@@ -23,24 +23,33 @@
           <li class="nav-item">
             <a class="nav-link text-dark " routerLinkActive="is-active"  routerLink="/kids">KIDS</a>
           </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <a class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" style="cursor: pointer;">
+                More
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item " routerLink="/news" routerLinkActive="is-active">News</a>
+                <a class="dropdown-item " routerLink="/events" routerLinkActive="is-active">Events</a>
+                <a class="dropdown-item " routerLink="/blogs" routerLinkActive="is-active">Blogs</a>
+                <a class="dropdown-item " routerLink="/frequently-asked-questions" routerLinkActive="is-active">FAQs</a>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
 
     <div class=" d-flex justify-content-lg-end">
       <a routerLink="cart" class=" nav-link fs-4 me-4 ">
-      <!-- <span  class="nav-icon"> -->
         <i class="bi bi-bag-fill"></i>
-      <!-- </span> -->
       <div class="cart-items">
         <!-- {{}} -->
       </div>
     </a>
 
       <a routerLink="login" class="nav-link fs-3">
-      <!-- <span  class="nav-icon"> -->
         <i class="bi bi-person-fill"></i>
-      <!-- </span> -->
       </a>
     </div>
     
