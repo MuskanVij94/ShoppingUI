@@ -9,7 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { MenComponent } from './pages/men/men.component';
 import { WomenComponent } from './pages/women/women.component';
-import { KidsComponent } from './pages/kids/kids.component';
+import { KidsComponent } from './pages/home&living/kids.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';

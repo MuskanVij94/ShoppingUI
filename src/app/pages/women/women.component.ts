@@ -7,7 +7,9 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./women.component.css']
 })
 export class WomenComponent {
-constructor(private carousel: NgbCarouselModule){
+constructor(
+  private carousel: NgbCarouselModule
+  ){
 
 }
 }
