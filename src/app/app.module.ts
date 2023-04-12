@@ -13,6 +13,15 @@ import { KidsComponent } from './pages/home&living/kids.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { TopwearComponent } from './pages/topwear/topwear.component';
+import { MenFootwearComponent } from './pages/men-footwear/men-footwear.component';
+import { MenIndianComponent } from './pages/men-indian/men-indian.component';
+import { MenAccessoriesComponent } from './pages/men-accessories/men-accessories.component';
+import { BottomwearComponent } from './pages/bottomwear/bottomwear.component';
+import { WesternwearComponent } from './pages/westernwear/westernwear.component';
+import { WomenIndianComponent } from './pages/women-indian/women-indian.component';
+import { WomenFootwearComponent } from './pages/women-footwear/women-footwear.component';
+import { WomenAccessoriesComponent } from './pages/women-accessories/women-accessories.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +35,17 @@ import { SignupComponent } from './pages/signup/signup.component';
     KidsComponent,
     CartComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    TopwearComponent,
+    BottomwearComponent,
+    MenFootwearComponent,
+    MenIndianComponent,
+    MenAccessoriesComponent,
+    BottomwearComponent,
+    WesternwearComponent,
+    WomenIndianComponent,
+    WomenFootwearComponent,
+    WomenAccessoriesComponent
   ],
   imports: [
     BrowserModule,

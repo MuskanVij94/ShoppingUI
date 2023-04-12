@@ -1,5 +1,16 @@
 
 .is-active {
     font-weight: 600;
-    color: rgb(100, 14, 6) !important;
+    color: rgb(92, 105, 255) !important;
   }
+
+.custom-bg-hover:hover,
+.custom-bg-hover:active {
+  background: black !important;
+  color: #fff !important;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
