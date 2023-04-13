@@ -1,18 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark w-100" style="background-color: white">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <div class="fw-bold fs-2 text-dark">STORE</div>
+  <div class="container-fluid pe-lg-5 ps-0 d-flex justify-content-between ">
+    <a class="navbar-brand ms-sm-1" href="#">
+      <img src="./../../../assets/logo1.jpg" alt="" width="220" height="110" priority>
+      <!-- <div class="fw-bold fs-2 text-dark">STORE</div> -->
     </a>
-
-    <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" (click)="isMenuCollapsed = !isMenuCollapsed">
+    
+    <button class="navbar-toggler btn btn-dark" style="background-color:rgb(8, 7, 7)" type="button" data-bs-toggle="collapse" (click)="isMenuCollapsed = !isMenuCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse w-100 " id="navbarSupportedContent" [ngbCollapse]="isMenuCollapsed">
       <div class="d-flex justify-content-lg-center w-100">
-        <ul class="h5 navbar-nav">
+        <ul class="h5 navbar-nav ps-3">
           <li class="nav-item">
-            <a class="nav-link text-dark " routerLinkActive="is-active"  routerLink="/home" [routerLinkActiveOptions]="{exact:true}">HOME</a>
+            <a class="nav-link text-dark " routerLinkActive="is-active"  routerLink="/" [routerLinkActiveOptions]="{exact:true}">HOME</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link text-dark" routerLinkActive="is-active"  routerLink="/men">Men</a>
@@ -25,41 +26,51 @@
           </li> -->
           <li class="nav-item">
             <div class="dropdown">
-              <a class="nav-link text-dark" routerLinkActive="is-active" data-bs-toggle="dropdown" style="cursor: pointer;">
+              <a class="nav-link text-dark" data-bs-toggle="dropdown" style="cursor: pointer;">
                 MEN
               </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item custom-bg-hover " href="/topwear" routerLinkActive="is-active">TopWear</a>
-                <a class="dropdown-item custom-bg-hover"  href="/bottomwear" routerLinkActive="is-active">BottomWear</a>
-                <a class="dropdown-item custom-bg-hover"  href="/men-footwear" routerLinkActive="is-active">Footwear</a>
-                <a class="dropdown-item custom-bg-hover"  href="/men-indian" routerLinkActive="is-active">Indian & Festive Wear</a>
-                <a class="dropdown-item custom-bg-hover"  href="/men-accessories" routerLinkActive="is-active">Accessories</a>
+              <div class="dropdown-menu ">
+                <a class="dropdown-item custom-bg-hover fw-bold " href="/topwear" routerLinkActive="is-active">Topwear</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item custom-bg-hover fw-bold"  href="/bottomwear" routerLinkActive="is-active">Bottomwear</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item custom-bg-hover fw-bold"  href="/men-footwear" routerLinkActive="is-active">Footwear</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item custom-bg-hover fw-bold"  href="/men-indian" routerLinkActive="is-active">Indian & Festive Wear</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item custom-bg-hover fw-bold"  href="/men-accessories" routerLinkActive="is-active">Accessories</a>
               </div>
             </div>
           </li>
           <li class="nav-item">
             <div class="dropdown">
-              <a class="nav-link text-dark" routerLinkActive="is-active" data-bs-toggle="dropdown" style="cursor: pointer;">
+              <a class="nav-link text-dark"  data-bs-toggle="dropdown" style="cursor: pointer;">
                 WOMEN
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item custom-bg-hover" href="/westernwear" routerLinkActive="is-active">WesternWear</a>
-                <a class="dropdown-item custom-bg-hover" href="/women-indian" routerLinkActive="is-active">Indian &#38; Fushion Wear</a>
-                <a class="dropdown-item custom-bg-hover" href="/women-footwear" routerLinkActive="is-active">Footwear</a>
-                <a class="dropdown-item custom-bg-hover" href="/women-accessories" routerLinkActive="is-active">Accessories</a>
+                <a class="dropdown-item custom-bg-hover fw-bold" href="/westernwear" routerLinkActive="is-active">Westernwear</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item custom-bg-hover fw-bold" href="/women-indian" routerLinkActive="is-active">Indian &#38; Fushion Wear</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item custom-bg-hover fw-bold" href="/women-footwear" routerLinkActive="is-active">Footwear</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item custom-bg-hover fw-bold" href="/women-accessories" routerLinkActive="is-active">Accessories</a>
               </div>
             </div>
           </li>  
           <li class="nav-item">
             <div class="dropdown">
-              <a class="nav-link text-dark" routerLinkActive="is-active" data-bs-toggle="dropdown" style="cursor: pointer;">
+              <a class="nav-link text-dark" data-bs-toggle="dropdown" style="cursor: pointer;">
                 HOME &#38; LIVING
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item custom-bg-hover" routerLink="/news" routerLinkActive="is-active">Home Decor</a>
-                <a class="dropdown-item custom-bg-hover" routerLink="/blogs" routerLinkActive="is-active">Storage</a>
-                <a class="dropdown-item custom-bg-hover" routerLink="/frequently-asked-questions" routerLinkActive="is-active">Furnishing</a>
-                <a class="dropdown-item custom-bg-hover" routerLink="/events" routerLinkActive="is-active">Lamps and Lighting</a>
+                <a class="dropdown-item custom-bg-hover fw-bold" routerLink="/news" routerLinkActive="is-active">Home Decor</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item custom-bg-hover fw-bold" routerLink="/blogs" routerLinkActive="is-active">Storage</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item custom-bg-hover fw-bold" routerLink="/frequently-asked-questions" routerLinkActive="is-active">Furnishing</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item custom-bg-hover fw-bold" routerLink="/events" routerLinkActive="is-active">Lamps and Lighting</a>
                 <!-- <a class="dropdown-item " routerLink="/frequently-asked-questions" routerLinkActive="is-active">Fashion Accessories</a> -->
               </div>
             </div>
@@ -68,7 +79,7 @@
       </div>
     </div>
 
-    <div class=" d-flex justify-content-lg-end">
+    <div class=" d-flex justify-content-lg-end ps-3">
       <a routerLink="cart" class=" nav-link fs-4 me-4 ">
         <i class="bi bi-bag-fill"></i>
       <div class="cart-items">
@@ -82,5 +93,4 @@
     </div>
     
   </div>
-  
 </nav>

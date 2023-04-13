@@ -1,12 +1,12 @@
 
 .is-active {
     font-weight: 600;
-    color: rgb(92, 105, 255) !important;
+    color: rgb(126, 131, 186) !important;
   }
 
 .custom-bg-hover:hover,
 .custom-bg-hover:active {
-  background: black !important;
+  background: rgb(29, 37, 127) !important;
   color: #fff !important;
 }
 
@@ -14,3 +14,6 @@
   display: block;
   margin-top: 0;
 }
+/* .navbar{
+  height:95px;
+} */

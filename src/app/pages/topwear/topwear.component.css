@@ -1,0 +1,14 @@
+.card-1{
+    width:84%;
+    border-radius: 0%;
+}
+.card-img-top{
+    border-radius: 0%;
+}
+
+.row-1{
+    position: relative;
+    padding-left: 20px;
+    margin-left:24px;
+    display:flex;
+}
