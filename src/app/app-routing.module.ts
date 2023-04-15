@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { KidsComponent } from './pages/home&living/kids.component';
-import { WomenComponent } from './pages/women/women.component';
-import { MenComponent } from './pages/men/men.component';
+import { WomenComponent } from './pages/womens/women/women.component';
+import { MenComponent } from './pages/mens/men/men.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CartComponent } from './pages/cart/cart.component';
-import { TopwearComponent } from './pages/topwear/topwear.component';
-import { BottomwearComponent } from './pages/bottomwear/bottomwear.component';
-import { MenIndianComponent } from './pages/men-indian/men-indian.component';
-import { MenFootwearComponent } from './pages/men-footwear/men-footwear.component';
-import { MenAccessoriesComponent } from './pages/men-accessories/men-accessories.component';
-import { WomenAccessoriesComponent } from './pages/women-accessories/women-accessories.component';
-import { WomenIndianComponent } from './pages/women-indian/women-indian.component';
-import { WesternwearComponent } from './pages/westernwear/westernwear.component';
-import { WomenFootwearComponent } from './pages/women-footwear/women-footwear.component';
+import { TopwearComponent } from './pages/mens/topwear/topwear.component';
+import { BottomwearComponent } from './pages/mens/bottomwear/bottomwear.component';
+import { MenIndianComponent } from './pages/mens/men-indian/men-indian.component';
+import { MenFootwearComponent } from './pages/mens/men-footwear/men-footwear.component';
+import { MenAccessoriesComponent } from './pages/mens/men-accessories/men-accessories.component';
+import { WomenAccessoriesComponent } from './pages/womens/women-accessories/women-accessories.component';
+import { WomenIndianComponent } from './pages/womens/women-indian/women-indian.component';
+import { WesternwearComponent } from './pages/womens/westernwear/westernwear.component';
+import { WomenFootwearComponent } from './pages/womens/women-footwear/women-footwear.component';
 
 
 const routes: Routes = [
