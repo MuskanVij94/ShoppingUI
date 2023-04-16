@@ -1,12 +1,12 @@
 
 .is-active {
     font-weight: 600;
-    color: rgb(126, 131, 186) !important;
+    color: rgb(104, 110, 176) !important;
   }
 
 .custom-bg-hover:hover,
 .custom-bg-hover:active {
-  background: rgb(29, 37, 127) !important;
+  background: rgb(0, 0, 0) !important;
   color: #fff !important;
 }
 

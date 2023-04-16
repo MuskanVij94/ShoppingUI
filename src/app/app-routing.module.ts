@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { KidsComponent } from './pages/home&living/kids.component';
+import { KidsComponent } from './pages/living/home&living/kids.component';
 import { WomenComponent } from './pages/womens/women/women.component';
 import { MenComponent } from './pages/mens/men/men.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -15,6 +15,8 @@ import { WomenAccessoriesComponent } from './pages/womens/women-accessories/wome
 import { WomenIndianComponent } from './pages/womens/women-indian/women-indian.component';
 import { WesternwearComponent } from './pages/womens/westernwear/westernwear.component';
 import { WomenFootwearComponent } from './pages/womens/women-footwear/women-footwear.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { HomedecorComponent } from './pages/living/homedecor/homedecor.component';
 
 
 const routes: Routes = [
@@ -25,6 +27,7 @@ const routes: Routes = [
   {path: 'kids', component: KidsComponent},
   {path: 'cart', component: CartComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent},
   {path: 'topwear', component: TopwearComponent},
   {path: 'bottomwear', component: BottomwearComponent},
   {path: 'men-footwear', component: MenFootwearComponent},
@@ -33,7 +36,8 @@ const routes: Routes = [
   {path: 'westernwear', component: WesternwearComponent},
   {path: 'women-footwear', component: WomenFootwearComponent},
   {path: 'women-indian', component: WomenIndianComponent},
-  {path: 'women-accessories', component: WomenAccessoriesComponent}
+  {path: 'women-accessories', component: WomenAccessoriesComponent},
+  {path: 'homedecor', component: HomedecorComponent},
 
 ];
 

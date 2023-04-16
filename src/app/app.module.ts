@@ -9,7 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { MenComponent } from './pages/mens/men/men.component';
 import { WomenComponent } from './pages/womens/women/women.component';
-import { KidsComponent } from './pages/home&living/kids.component';
+import { KidsComponent } from './pages/living/home&living/kids.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -26,6 +26,8 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore'
+import { AuthService } from './service/auth.service';
+import { HomedecorComponent } from './pages/living/homedecor/homedecor.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore'
     WesternwearComponent,
     WomenIndianComponent,
     WomenFootwearComponent,
-    WomenAccessoriesComponent
+    WomenAccessoriesComponent,
+    HomedecorComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore'
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

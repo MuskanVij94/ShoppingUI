@@ -1,6 +1,21 @@
-.col {
-    font-size: 6.4rem;
+
+
+.banner {
+    min-height: calc(40vh - 60px);
+    display: flex;
+    /* align-items: center;
+    justify-content: center;
+    text-align: center; */
+    background: rgba(243, 242, 242, 0.8);
+    display: inline-block;
+    padding: 2rem;
+}
+
+.banner-title {
+    font-size: 3.4rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     margin-bottom: 1rem;
 }
+
+

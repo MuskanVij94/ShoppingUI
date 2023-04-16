@@ -38,9 +38,12 @@
     letter-spacing: 0.1rem;
     margin-bottom: 1rem;
 }
-
+.banner-btn{
+  background: black;
+  color:#ffffff
+}
 .banner-btn:hover {
-    background: black;
+    background: rgba(132, 108, 108, 0.505);
     color: #ffffff;
 }
 
