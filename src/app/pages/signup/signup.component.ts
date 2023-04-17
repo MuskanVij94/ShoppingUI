@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class SignupComponent implements OnInit {
 
-  registerForm: FormGroup = new FormGroup({});
+  registerForm!: FormGroup;
   errorMsg: string | undefined;
   loader: boolean = false;
 
@@ -30,32 +30,18 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  // registerUser(form: any): void {
-  //   // let formValues = { ...form.value };
-  //   delete this.errorMsg;
-  //   this.loader = true;
-  //   let formValues: {  name: string; email: string; password: string } = Object.assign({}, form.value);
-  //   this.authService.registerUser(formValues)
-  //     .then(() => this.loader = false)
-  //     .catch((error) => {
-  //       this.loader = false;
-  //       this.errorMsg = error;
-  //       setTimeout(() => delete this.errorMsg, 5000)
-  //     });
-  // }
-
-  async registerUser() {
-    let value = { ...this.registerForm.value };
-    console.log(value);
-    
-    let docRef = doc(this.firestore, `users/${value.userId}`);
-    setDoc(docRef, { ...value })
-      .then(() => {
-        console.log("Saved");
-        
-      }, (error: any) => {
-        console.log(error);
-        
-      })
+  async registerUser(form: any){
+    // let formValues = { ...form.value };
+    delete this.errorMsg;
+    this.loader = true;
+    let formValues: {  name: string; email: string; password: string } = Object.assign({}, form.value);
+    this.authService.registerUser(formValues)
+      .then(() => this.loader = false)
+      .catch((error) => {
+        this.loader = false;
+        this.errorMsg = error;
+        setTimeout(() => delete this.errorMsg, 5000)
+      });
   }
+
 }

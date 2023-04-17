@@ -28,6 +28,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore'
 import { AuthService } from './service/auth.service';
 import { HomedecorComponent } from './pages/living/homedecor/homedecor.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { HomedecorComponent } from './pages/living/homedecor/homedecor.component
     NgbModule,
     NgbCarouselModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())
