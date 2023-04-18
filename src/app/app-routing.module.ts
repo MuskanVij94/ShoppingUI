@@ -17,6 +17,7 @@ import { WesternwearComponent } from './pages/womens/westernwear/westernwear.com
 import { WomenFootwearComponent } from './pages/womens/women-footwear/women-footwear.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { HomedecorComponent } from './pages/living/homedecor/homedecor.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'men', component: MenComponent},
   {path: 'women', component: WomenComponent},
   {path: 'kids', component: KidsComponent},
+  {path: 'contact', component: ContactComponent},
   {path: 'cart', component: CartComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
