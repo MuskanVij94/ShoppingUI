@@ -1,14 +1,44 @@
-<ng-template #content let-offcanvas>
-	<div class="offcanvas-header">
-		<h4 class="offcanvas-title">Offcanvas title</h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+<div class="container  p-lg-2 mb-4">
+	<div class="cart-title text-center my-5">
+		<h1>Check Items in Cart</h1>
 	</div>
-	<div class="offcanvas-body">
-		<p>One fine body&hellip;</p>
-		<div class="text-end">
-			<button type="button" class="btn btn-outline-dark" (click)="offcanvas.close('Close click')">Close</button>
+	<!-- <div class="cart-body"> -->
+		<div class="row py-2">
+			<div class="col-12 col-sm-6 col-lg-4 mb-4" *ngFor="let item of cartList">
+				<div class="card">
+					<img [src]="item.imageUrl" style="height: 300px" class="card-img-top" alt="...">
+					<div class="card-body text-center ">
+					  <h6 class="fw-bold">{{item.title}}</h6>
+					  <h6 class="fw-normal">{{item.description}}</h6>
+					  <h6 class="fw-bold">{{item.price}} </h6>
+					  <a class="btn btn-dark btn-sm mx-2" style="text-align: center;">Modify</a>
+					  <a class="btn btn-dark btn-sm" style="text-align: center;" (click)="deleteItem(item.menfootwearId)">Remove</a>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-</ng-template>
+	<!-- </div> -->
+</div>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo offcanvas</button>
+
+<!-- <div class="container  p-lg-2 mb-4">
+	<div class="cart-title text-center my-5">
+		<h1>Check Items in Cart</h1>
+	</div>
+<div class="card mb-3" style="max-width: 540px;">
+	<div class="row g-0">
+	  <div class="col-md-4" *ngFor="let item of cartList">
+		<img [src]="item.imageUrl" style="height: 300px" alt="..." class="img-fluid rounded-start">
+	  </div>
+	  <div class="col-md-8">
+		<div class="card-body">
+			<h6 class="fw-bold">{{item.title}}</h6>
+			<h6 class="fw-normal">{{item.description}}</h6>
+			<h6 class="fw-normal">{{item.price}} </h6>
+			<a class="btn btn-dark btn-sm mx-2" style="text-align: center;">Modify</a>
+			<a class="btn btn-dark btn-sm" style="text-align: center;" (click)="deleteItem(item.menfootwearId)">Remove</a>
+		  </div>
+	  </div>
+	</div>
+  </div>
+  </div> -->

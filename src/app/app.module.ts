@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule,NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +29,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore'
 import { AuthService } from './service/auth.service';
 import { HomedecorComponent } from './pages/living/homedecor/homedecor.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DbService } from './service/db.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+// import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -57,15 +60,28 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     NgbModule,
     NgbCarouselModule,
     AppRoutingModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    // MatDialogModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,
+     DbService,
+    { 
+      provide: APP_INITIALIZER,
+      useFactory: function(dbService: DbService) {
+        return () => dbService.onLoad();
+      },
+      deps: [DbService],
+      multi: true
+    }
+  
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

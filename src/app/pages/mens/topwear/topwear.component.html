@@ -1,17 +1,34 @@
 
-
-
 <div class="container p-lg-5">
+  <div class="row py-2">
+    <div class="col-12 col-sm-6 col-lg-4 mb-4" *ngFor="let item of topwearList; index as idx">
+    <div class="card">
+        <img [src]="item.imageUrl" class="card-img-top" style=" height: 300px">
+        <div class="card-body" style="background-color: rgb(219, 210, 164);">
+          <div class="card-title mx-3">        
+            <h6 class="fw-bold">{{item.title}}</h6>
+            <h6 class="fw-normal">{{item.description}}</h6>
+            <h6 class="d-flex ">{{item.price}} </h6>
+            <!-- <p class="text-danger">(30% OFF)</p> -->
+          </div>
+          <a class="btn btn-dark btn-sm ms-3" type="button" (click)="addToCart(item)">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container p-lg-5">
     <div class="row row-1 py-2">
       <div class="col-12 col-sm-6 col-lg-4 mb-4">
         <div class="card card-1">
           <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2527414/2018/7/3/6edab994-71e5-4779-9d4f-dbb8c9725fdd1530618573918-Roadster-Men-Black-Regular-Fit-Solid-Casual-Shirt-4915306185-1.jpg"
-            class="card-img-top" style=" height: 300px">
+            class="card-img-top" style=" height: 300px"> -->
             <!-- <button (click)="addTocart(product,$event)" class="bag-btn" data-id={{product.id}}>
               <i class="fas fa-shopping-cart"></i>
               add to bag
             </button> -->
-          <div class="card-body">
+          <!-- <div class="card-body">
            <div class="card-title mx-3">        
                  <h6 class="fw-bold">HERE&NOW </h6>
                  <h6 class="fw-normal"> Slim Fit Casual Shirt</h6>
@@ -130,7 +147,7 @@
     </div>
   </div>
   </div>
-  </div>
+  </div> -->
   
   
   

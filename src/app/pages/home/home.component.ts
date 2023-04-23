@@ -1,32 +1,72 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { DbService } from 'src/app/service/db.service';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-    
-  categoryList: any[] = []
+export class HomeComponent implements OnInit{
+  
+  menIndianList: any[] = []
+  menAccessoriesList: any[] = []
+  menFootwearList: any[] = []
 
-  constructor(public dbService: DbService,)
-    {}
+  womenIndianList: any[] = []
+  womenAccessoriesList: any[] = []
+  womenFootwearList: any[] = []
 
-  getDataFromdbService(){
+  constructor(
+    public ngbCarousel: NgbCarouselModule,
+    public dbService: DbService
+  ){}
 
-    let categorySub = this.dbService.homeVisaSubject.subscribe((value) => {
-      if(value.length !== 0){
-        this.categoryList = value
-        this.dbService.getWindowRef().setTimeout(() => categorySub.unsubscribe(), this.dbService.timeoutInterval*60)
+  ngOnInit(): void {
+      this.getDataFromDbService()
+  }
+
+  getDataFromDbService(){
+    let homeMenIndianSub = this.dbService.homeMenIndianSubject.subscribe((value) => {
+      if(value!== null){
+        this.menIndianList = value
+        this.dbService.getWindowRef().setTimeout(() => homeMenIndianSub.unsubscribe(), this.dbService.timeoutInterval * 60)
       }
     })
 
-    // let serviceSub = this.dbService.homeServiceSubject.subscribe((value) =>{
-    //   if(value.length !== 0){
-    //     this.servicesList = value
-    //     this.dbService.getWindowRef().setTimeout(() => serviceSub.unsubscribe(), this.dbService.timeoutInterval*60)
-    //   }
-    // })
+    let homeMenAccessoriesSub = this.dbService.homeMenAccessoriesSubject.subscribe((value) => {
+      if(value!== null){
+        this.menAccessoriesList = value
+        this.dbService.getWindowRef().setTimeout(() => homeMenAccessoriesSub.unsubscribe(), this.dbService.timeoutInterval * 60)
+      }
+    })
+
+    let homeMenFootwearSub = this.dbService.homeMenFootwearSubject.subscribe((value) => {
+      if(value!== null){
+        this.menFootwearList = value
+        this.dbService.getWindowRef().setTimeout(() => homeMenFootwearSub.unsubscribe(), this.dbService.timeoutInterval * 60)
+      }
+    })
+
+    let homeWomenIndianSub = this.dbService.homeWomenIndianSubject.subscribe((value) => {
+      if(value!== null){
+        this.womenIndianList = value
+        this.dbService.getWindowRef().setTimeout(() => homeWomenIndianSub.unsubscribe(), this.dbService.timeoutInterval * 60)
+      }
+    })
+
+    let homeWomenAccessoriesSub = this.dbService.homeWomenAccessoriesSubject.subscribe((value) => {
+      if(value!== null){
+        this.womenAccessoriesList = value
+        this.dbService.getWindowRef().setTimeout(() => homeWomenAccessoriesSub.unsubscribe(), this.dbService.timeoutInterval * 60)
+      }
+    })
+
+    let homeWomenFootwearSub = this.dbService.homeWomenFootwearSubject.subscribe((value) => {
+      if(value!== null){
+        this.womenFootwearList = value
+        this.dbService.getWindowRef().setTimeout(() => homeWomenFootwearSub.unsubscribe(), this.dbService.timeoutInterval * 60)
+      }
+    })
   }
 }

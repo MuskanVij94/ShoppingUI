@@ -9,7 +9,7 @@ import { QUERIES_COLLECTION } from 'src/app/constants';
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
-})
+}) 
 export class ContactComponent implements OnInit {
   queryForm: FormGroup = new FormGroup({})
   formSubmitted: boolean = false

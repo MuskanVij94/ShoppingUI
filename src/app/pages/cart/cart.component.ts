@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbOffcanvas, NgbOffcanvasConfig } from '@ng-bootstrap/ng-bootstrap';
+import { DbService } from 'src/app/service/db.service';
+import { deleteDoc, doc, collection, Firestore } from '@angular/fire/firestore';
+import { CART_COLLECTION } from 'src/app/constants';
 
 @Component({
   selector: 'app-cart',
@@ -9,21 +11,36 @@ import { NgbOffcanvas, NgbOffcanvasConfig } from '@ng-bootstrap/ng-bootstrap';
 
 export class CartComponent implements OnInit{
 
-  public products: any = []
-  public grandTotal!: number
-  public totalAmount: any
+ cartList: any[] = []
 
-  constructor(config: NgbOffcanvasConfig, private offcanvasService: NgbOffcanvas){
-    config.position = 'end';
-		config.backdropClass = 'bg-info';
-		config.keyboard = false;
-  }
+  constructor(
+    private dbService: DbService,
+    private firestore: Firestore
+  ){ }
 
   ngOnInit(): void {
-      
+    this.getData()
   }
 
-  open(content: any) {
-		this.offcanvasService.open(content);
-	}
+  getData(){
+    if(this.dbService.cartSubject.value.length === 0) this.dbService.getCartItems()
+  let cartSub = this.dbService.cartSubject.subscribe((value) => {
+      if(value.length !== 0){
+        this.cartList = [...value]
+        this.dbService.getWindowRef().setTimeout(() => cartSub.unsubscribe, this.dbService.timeoutInterval * 6)
+      }
+    })
+  }
+  
+  deleteItem(docId: any) {
+    const docInstance = doc(this.firestore,CART_COLLECTION,docId)
+    deleteDoc(docInstance)
+      .then(() => {
+        console.log("Success")
+      }, (error: any) => {
+        console.error(">>> error: ", error);
+          console.log(error)
+      });
+  }
+  
 }

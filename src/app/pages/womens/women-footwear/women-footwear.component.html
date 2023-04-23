@@ -1,16 +1,31 @@
 
 
+<div class="container p-lg-5 my-4">
+  <div class="row py-2">
+    <div class="col-12 col-sm-6 col-lg-4 mb-4" *ngFor="let item of womenFootwearList; index as idx">
+      <div class="card card-1">
+        <img [src]="item.imageUrl" class="card-img-top" style="width:100%; height: 300px">
+        <div class="card-body" style="background-color: rgb(219, 210, 164);">
+          <div class="card-title mx-3">        
+            <h6 class="fw-bold">{{item.title}}</h6>
+            <h6 class="fw-normal">{{item.description}}</h6>
+            <h6 class="d-flex">{{item.price}}</h6>
+          </div>
+          <button class="btn btn-dark btn-sm ms-3" type="button" (click)="addToCart(item)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<div class="container p-lg-5">
+
+<!-- <div class="container p-lg-5">
     <div class="row row-1 py-2">
       <div class="col-12 col-sm-6 col-lg-4 mb-4">
         <div class="card card-1">
           <img src="https://assets.myntassets.com/h_480,q_100,w_360/v1/assets/images/17861718/2022/4/12/d9dd84e8-9a2e-4d44-bba2-236faf7b5e2c1649758816801RedTapeMenBeigeSportsShoes1.jpg"
             class="card-img-top" style=" height: 300px">
-            <!-- <button (click)="addTocart(product,$event)" class="bag-btn" data-id={{product.id}}>
-              <i class="fas fa-shopping-cart"></i>
-              add to bag
-            </button> -->
+            
           <div class="card-body">
            <div class="card-title mx-3">        
                  <h6 class="fw-bold">Red Tape</h6>
@@ -20,8 +35,7 @@
           </div>
         </div>
       </div>
-      <!-- https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/19140998/2022/7/16/4504833d-9bac-4125-a56a-82c91590492a1657974760357Shirts1.jpg -->
-      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+           <div class="col-12 col-sm-6 col-lg-4 mb-4">
         <div class="card card-1">
           <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/16530962/2021/12/24/9f9b34b2-cba5-415a-9718-c224263649f11640350292538-Puma-Unisex-Casual-Shoes-1941640350292216-1.jpg" 
           class="card-img-top" style=" height: 300px">
@@ -116,7 +130,7 @@
                  </div>
            </div>
         </div>
-      </div>
+      </div> -->
       <!-- <div class="col-12 col-sm-6 col-lg-4 mb-4">
         <div class="card card-1">
           <img
@@ -131,8 +145,8 @@
              </div>
     </div>
   </div> -->
+  <!-- </div>
   </div>
-  </div>
-  
+   -->
   
   
