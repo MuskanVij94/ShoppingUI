@@ -31,7 +31,7 @@ import { HomedecorComponent } from './pages/living/homedecor/homedecor.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { DbService } from './service/db.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-// import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -68,7 +68,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    // MatDialogModule
+    MatDialogModule
   ],
   providers: [AuthService,
      DbService,

@@ -35,8 +35,15 @@ export class WomenAccessoriesComponent implements OnInit{
   }
 
   addToCart(values: any){
-    let docRef = doc(this.collectionRef);
-    setDoc(docRef, { ...values }, { merge: true })
+    let cartId = doc(this.collectionRef).id
+    let docRef = doc(this.collectionRef, cartId);
+    window.alert('Your product has been added to the cart!');
+
+    let cartObj = { ...values, cartId };
+    values["quantity"] = 1
+    values["priceInt"] = +String(values["price"]).replace("Rs. ", "").trim()
+
+    setDoc(docRef, { ...values, cartId }, { merge: true })
     .then(() => {
       console.log("Success")
     }, (error) => {

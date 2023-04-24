@@ -40,7 +40,11 @@
 }
 .banner-btn{
   background: black;
-  color:#ffffff
+  color:#ffffff;
+  border-radius: 0%;
+}
+.btn{
+    border-radius: 0%;
 }
 .banner-btn:hover {
     background: rgba(153, 153, 153);

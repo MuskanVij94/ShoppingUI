@@ -4,19 +4,23 @@
 	</div>
 	<!-- <div class="cart-body"> -->
 		<div class="row py-2">
-			<div class="col-12 col-sm-6 col-lg-4 mb-4" *ngFor="let item of cartList">
+			<div class="col-12 col-sm-6 col-lg-4 mb-4" *ngFor="let item of cartList; index as idx">
 				<div class="card">
 					<img [src]="item.imageUrl" style="height: 300px" class="card-img-top" alt="...">
 					<div class="card-body text-center ">
 					  <h6 class="fw-bold">{{item.title}}</h6>
 					  <h6 class="fw-normal">{{item.description}}</h6>
 					  <h6 class="fw-bold">{{item.price}} </h6>
-					  <a class="btn btn-dark btn-sm mx-2" style="text-align: center;">Modify</a>
-					  <a class="btn btn-dark btn-sm" style="text-align: center;" (click)="deleteItem(item.menfootwearId)">Remove</a>
+					   Qunatity: <input type="number" class="cart-quantity mx-2" [id]="idx" [value]="item['qunatity'] || 1" (change)="onQuantityChange($event, idx)">
+					  <!-- <a class="btn btn-dark btn-sm mx-2 mt-2" style="text-align: center;">Modify  <i class="bi bi-chevron-double-up"></i></a> -->
+					  <a class="btn btn-dark btn-sm " style="text-align: center;" (click)="deleteItem(item.cartId)">Remove  <i class="bi bi-trash"></i></a>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="text-center">
+			<h5 class="fw-bold">Total: {{ totalPrice | currency:'INR':'symbol':'1.2' }} </h5>
+		<button type="button" class="btn banner-btn btn-warning" (click)="buynow()" >BUY NOW</button> </div>
 	<!-- </div> -->
 </div>
 

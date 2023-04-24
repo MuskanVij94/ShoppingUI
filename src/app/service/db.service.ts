@@ -2,8 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { 
   collection, CollectionReference, doc, DocumentData, Firestore, getDoc, limit,
-  onSnapshot,
-  orderBy, Query, query, QueryDocumentSnapshot, startAfter, where } from '@angular/fire/firestore'
+  onSnapshot,  orderBy, Query, query, QueryDocumentSnapshot, setDoc, startAfter, where } from '@angular/fire/firestore'
 import { BehaviorSubject } from 'rxjs';
 import * as CONSTANTS from '../constants'
 
@@ -62,7 +61,7 @@ export class DbService {
 
   $HOME_DOC_LIMIT: number = 3;
   $DOC_LIMIT: number = 6;
-
+  collectionRef!: CollectionReference<DocumentData>
     // Load More Bools for various sections
     isItemsAvailable: boolean = true;
   constructor(
@@ -84,6 +83,23 @@ export class DbService {
     this.getWesternwear()
   }
 
+
+  addToCart(values: any){
+    let cartId = doc(this.collectionRef).id
+    let docRef = doc(this.collectionRef, cartId);
+    window.alert('Your product has been added to the cart!');
+
+    let cartObj = { ...values, cartId };
+    values["quantity"] = 1
+    values["priceInt"] = +String(values["price"]).replace("Rs. ", "").trim()
+
+    setDoc(docRef, { ...values, cartId }, { merge: true })
+    .then(() => {
+      console.log("Success")
+    }, (error) => {
+      console.log(error)
+    })
+  }
 
   getWindowRef = (): Window => this.doc.defaultView as Window;
   getCollectionRef = (collectionName: string): CollectionReference<DocumentData> => collection(this.firestore, collectionName);
@@ -196,7 +212,10 @@ export class DbService {
   async getCartItems(){
     const unsub = onSnapshot(this.getCollectionRef(CONSTANTS.CART_COLLECTION), (snapshot) => {
       this.cartSubject.next(snapshot.docs.map(e => {
-        return e.data()
+        return {
+          ...e.data(),
+          cartId: e.id
+        }
       }))
       this.getWindowRef().setTimeout(() => unsub(), this.timeoutInterval * 6)
     })

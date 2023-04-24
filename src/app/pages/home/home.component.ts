@@ -8,7 +8,8 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  
+  // categoryList: any[] = []
+
   menIndianList: any[] = []
   menAccessoriesList: any[] = []
   menFootwearList: any[] = []
@@ -25,6 +26,17 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
       this.getDataFromDbService()
   }
+
+  // getData(){
+  //   if(this.dbService.categorySubject.value.length === 0) this.dbService.getCategory()
+  //   let categorySub = this.dbService.categorySubject.subscribe((value) => {
+  //     if(value.length !== 0){
+  //       this.categoryList = [...value]
+  //       this.dbService.getWindowRef().setTimeout(() => categorySub.unsubscribe, this.dbService.timeoutInterval * 6)
+  //     }
+  //   })
+  // }
+
 
   getDataFromDbService(){
     let homeMenIndianSub = this.dbService.homeMenIndianSubject.subscribe((value) => {

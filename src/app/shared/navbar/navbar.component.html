@@ -84,12 +84,14 @@
     </div>
 
     <div class=" d-flex justify-content-lg-end ps-3">
-      <a class=" nav-link fs-4 me-4" (click)="openEnd(content)">
+      <a class=" nav-link fs-4 me-4" (click)="openEnd(content)" >
         <i class="bi bi-bag"></i>
         <p class="h6">Cart</p>
-      <div class="cart-items">
-      </div>
+      <!-- <div class="cart-items">
+      </div> -->
     </a>
+
+    
 
       <a routerLink="login" class="nav-link fs-4">
         <i class="bi bi-person"></i>
@@ -99,57 +101,28 @@
     </div>
 </nav>
 
-<!-- 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Cart Items</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div class="card mb-3 mt-3" style="width: 18rem;">
-      <img src="https://media.istockphoto.com/id/1404885159/photo/view-of-tripod-lamp-in-a-cozy-living-room-spending-warm-light.jpg?b=1&s=170667a&w=0&k=20&c=zsfHg353TKGXeE0DSSQL2A30zFv9P9YTyKggPe-efqE=" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card mb-3 mt-3" style="width: 18rem;">
-      <img src="https://images.news18.com/ibnlive/uploads/2022/09/budget-friendly-home-decor-16630683643x2.jpg?impolicy=website&width=1600&height=900" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card mb-3 mt-3" style="width: 18rem;">
-      <img src="https://media.istockphoto.com/id/1182454657/photo/bohemian-living-room-interior-3d-render.jpg?s=612x612&w=0&k=20&c=qw37MGIiTL_jML3_Tbm4bM-jNLCrocSWj7DanhBr_bY=" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-
-      <button class="btn btn-dark d-flex justify-content-center" routerLink="cart" type="button">Open Cart</button>
-
-    </div>
-  </div>
-</div> -->
 
 <ng-template #content let-offcanvas>
   <div class="offcanvas-header">
-    <h4 class="offcanvas-title">Items in your Cart</h4>
+    <h4 class="offcanvas-title">Your Cart</h4>
     <a type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></a>
   </div>
   <div class="offcanvas-body d-flex flex-column align-items-center">
     <div class="row">
       <div class="col" *ngFor="let item of cartList; index as idx">
-        <div class="card mx-4 my-3" style="width:15rem; height:23rem;"   >
-          <img [src]="item.imageUrl" style="width:15rem; height:15rem;" class="card-img-top" alt="...">
+        <div class="card mx-5 my-3" style="width:12rem; height:18rem;"   >
+          <img [src]="item.imageUrl" style="width:12rem; height:11rem;" class="card-img-top" alt="...">
           <div class="card-body text-center ">
-            <h6 class="fw-bold">{{item.title}}</h6>
+            <h6 class="fw-normal">{{item.title}}</h6>
             <h6 class="fw-normal">{{item.description}}</h6>
-            <p class="fw-bold">{{item.price}}</p>
+            <h6 class="fw-normal">{{item.price}}</h6>
+           
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="d-flex justify-content-center mt-5 mb-5">
-    <button class="btn btn-dark mx-5 btn-sm" type="button"  routerLink="/cart">OPEN CART</button>
+    <a class="btn btn-warning mx-5 btn-sm" type=button  href="cart">OPEN CART</a>
   </div>
 </ng-template>

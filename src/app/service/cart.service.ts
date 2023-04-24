@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { Products } from '../product';
-import { FormBuilder } from '@angular/forms';
-import { collection, doc, Firestore, setDoc, Timestamp } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  // items: item[] = [];
+  constructor() { }
 
-  constructor(
-    public service: CartService,
-    public fb: FormBuilder,
-    private firestore: Firestore
-    ) { }
+  // getItems() {
+  //   return this.items;
+  // }
+
+  // clearCart() {
+  //   this.items = [];
+  //   return this.items;
+  // }
 }
