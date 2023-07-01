@@ -25,17 +25,17 @@ export class AuthService {
     private firestore: Firestore,
     private router: Router
   ) {
-    // onAuthStateChanged(auth, (user) => {
-    //   if(user !== null) {
-    //     console.log(">>> User is already signed");
-    //     this.fetchUserDetailsFromFirestore(user.uid);
-    //   } else {
-    //     console.log(">>> User is not sign in");
-    //     // this.userModel = null;
-    //   }
-    // }, (error) => {
-    //   console.log(error);
-    // })
+    onAuthStateChanged(auth, (user) => {
+      if(user !== null) {
+        console.log(">>> User is already signed");
+        this.fetchUserDetailsFromFirestore(user.uid);
+      } else {
+        console.log(">>> User is not sign in");
+        // this.userModel = null;
+      }
+    }, (error) => {
+      console.log(error);
+    })
   }
 
   loginUser({ email, password }: { email: string; password: string }): Promise<UserCredential> {
@@ -80,12 +80,13 @@ export class AuthService {
     setDoc(docRef, { ...userObj }, { merge: true })
   }
 
+
+
   fetchUserDetailsFromFirestore(authId: string) {
     let queryRef = query(
       collection(this.firestore, "users"),
       where("authId", "==", authId)
     )
-
     const unsubscribe = onSnapshot(queryRef, (values) => {
       if(values.docs.length === 0) {
         // If user not found then there is no need snapshot 

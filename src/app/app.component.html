@@ -3,18 +3,19 @@
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 <div *ngIf="!loader"  style="position: fixed; right: 10px; bottom: 10px; z-index: 1;">
-    <div class="d-flex flex-row rounded" style="background-color: white;">
-      <!-- <a href="{{ social?.whatsappNumber }}" target="_blank" class="btn">
-        <i class="fa-brands fa-whatsapp text-success fa-xl"></i>
-      </a> -->
+    <div class="d-flex flex-column rounded" style="background-color: white;">
+     
       <!-- <a href="{{ social?.youtube }}" target="_blank" class="btn">
         <i class="fa-brands fa-youtube text-danger fa-xl"></i>
       </a> -->
-      <a href="{{ social?.instagram }}" target="_blank" class="btn mx-1 " style="color:#E1306C">
+      <a href="{{ social?.instagram }}" target="_blank" class="btn " style="color:#E1306C">
         <i class="fa-brands fa-instagram  fa-xl"></i>
       </a>
-      <a href="{{ social?.facebook }}" target="_blank" class="btn" >
+      <a href="{{ social?.facebook }}" target="_blank" class="btn">
         <i class="fa-brands fa-facebook text-primary fa-xl" ></i>
       </a>  
+      <!-- <a href="{{ social?.whatsappNumber }}" target="_blank" class="btn">
+        <i class="fa-brands fa-whatsapp text-success fa-xl"></i>
+      </a> -->
     </div>
   </div>

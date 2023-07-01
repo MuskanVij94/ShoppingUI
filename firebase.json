@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site":"shoppingui",
+    "public": "dist/immigration-project",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

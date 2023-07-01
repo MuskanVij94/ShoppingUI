@@ -1,7 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
-import { 
-  collection, CollectionReference, doc, DocumentData, Firestore, getDoc, limit,
+import { collection, CollectionReference, doc, DocumentData, Firestore, getDoc, limit,
   onSnapshot,  orderBy, Query, query, QueryDocumentSnapshot, setDoc, startAfter, where } from '@angular/fire/firestore'
 import { BehaviorSubject } from 'rxjs';
 import * as CONSTANTS from '../constants'
@@ -11,6 +10,7 @@ import * as CONSTANTS from '../constants'
 })
 export class DbService {
 
+  socialSubject = new BehaviorSubject<any>(null);
   //Men-Indian Page Data
   homeMenIndianSubject = new BehaviorSubject<any[]>([])
   menIndianSubject = new BehaviorSubject<any[]>([])
@@ -68,12 +68,13 @@ export class DbService {
     @Inject(DOCUMENT) private doc: Document,
     private firestore: Firestore,
   ) {
-    this.getMenIndian()
-    this.getMenAccessories()
-    this.getMenFootwear()
-    this.getWomenIndian()
-    this.getWomenAccessories()
-    this.getWomenFootwear()
+    this.getMenIndian();
+    this.getMenAccessories();
+    this.getMenFootwear();
+    this.getWomenIndian();
+    this.getWomenAccessories();
+    this.getWomenFootwear();
+    this.getSocialUrl();
   }
 
   public onLoad(){
@@ -115,10 +116,7 @@ export class DbService {
   public get timeoutInterval() {
     return 10000;
   }
-
-
   
-
   async getMenIndian() {
     const unsub = onSnapshot(this.getCollectionRef(CONSTANTS.MEN_INDIAN_COLLECTION), (snapshot) => {
       this.menIndianSubject.next(snapshot.docs.map(e => {
@@ -212,13 +210,15 @@ export class DbService {
   async getCartItems(){
     const unsub = onSnapshot(this.getCollectionRef(CONSTANTS.CART_COLLECTION), (snapshot) => {
       this.cartSubject.next(snapshot.docs.map(e => {
-        return {
-          ...e.data(),
-          cartId: e.id
+        return {...e.data(), cartId: e.id
         }
       }))
       this.getWindowRef().setTimeout(() => unsub(), this.timeoutInterval * 6)
     })
   }
   
+  async getSocialUrl() {
+    let docRef = await getDoc(doc(this.getCollectionRef(CONSTANTS.SOCIAL_COLLECTION), CONSTANTS.SOCIAL_COLLECTION));
+    this.socialSubject.next(docRef.data());
+  }
 }
