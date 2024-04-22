@@ -1,7 +1,15 @@
 
 .carousel-item,.carousel-inner{
-    height: 600px;
+    height: 580px;
     /* width: 100%; */
+}
+
+
+@media (min-width: 301px) and (max-width: 500px) {
+    .carousel-item,.carousel-inner{
+        height: 240px;
+        /* width: 100%; */
+    }
 }
 
 .card-1{

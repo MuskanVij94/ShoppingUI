@@ -65,6 +65,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     NgbCarouselModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site":"shoppingui",
+    "site":"styleandspace",
     "public": "dist/immigration-project",
     "ignore": [
       "firebase.json",
